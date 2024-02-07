@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity 0.8.24;
 
 import {EntryPoint} from "@account-abstraction/contracts/core/EntryPoint.sol";
@@ -23,11 +23,5 @@ contract SmartAccount is IAccount {
 
     function execute() external {
         s_count++;
-    }
-}
-
-contract AccountFactory {
-    function createAccount(address owner) external returns (address smartAccount) {
-        return address(new SmartAccount(owner));
     }
 }
